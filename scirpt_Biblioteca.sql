@@ -1,3 +1,7 @@
+CREATE DATABASE Biblioteca;
+
+USE Biblioteca;
+
 CREATE TABLE
     Bibliotecario (
         id_bibliotecario VARCHAR (10) PRIMARY KEY,
@@ -6,7 +10,8 @@ CREATE TABLE
         direccion VARCHAR(50) NOT NULL,
         telefono VARCHAR(20) NOT NULL,
         correo VARCHAR (100)
-    )
+    );
+
 CREATE TABLE
     Estudiante (
         id_estudiante VARCHAR (10) PRIMARY KEY,
@@ -15,17 +20,20 @@ CREATE TABLE
         direccion VARCHAR(50) NOT NULL,
         telefono VARCHAR(20) NOT NULL,
         correo VARCHAR (100)
-    )
+    );
+
 CREATE TABLE
     Autor(
         id_autor INT PRIMARY KEY IDENTITY (1, 1),
         nombre VARCHAR (100) NOT NULL
-    )
+    );
+
 CREATE TABLE
     Categoria(
         id_categoria INT PRIMARY KEY IDENTITY (1, 1),
         descripcion VARCHAR (100) NOT NULL
-    )
+    );
+
 CREATE TABLE
     Libro (
         id_libro INT PRIMARY KEY IDENTITY (1, 1),
@@ -60,4 +68,4 @@ CREATE TABLE
         id_libro INT,
         FOREIGN KEY (id_autor) REFERENCES Autor (id_autor),
         FOREIGN KEY (id_libro) REFERENCES Libro (id_libro)
-    ) -- Hola soy Jessika desde otra maquina
+    );
